@@ -3,6 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chimerakang.github.io/tags/ar/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chimerakang.github.io/about/about/</loc>
     <lastmod>2019-08-14T00:00:00+00:00</lastmod>
   </url>
@@ -20,6 +26,11 @@
   
   <url>
     <loc>https://chimerakang.github.io/posts/post2github/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chimerakang.github.io/posts/vuforia1/</loc>
     <lastmod>2019-08-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,6 +54,18 @@
                 hreflang="zh-tw"
                 href="https://chimerakang.github.io/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://chimerakang.github.io/tags/unity/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chimerakang.github.io/tags/vuforia/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

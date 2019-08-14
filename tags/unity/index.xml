@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on 漫步在數位靈魂之中</title>
+    <link>https://chimerakang.github.io/tags/unity/</link>
+    <description>Recent content in Unity on 漫步在數位靈魂之中</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Chimera</copyright>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chimerakang.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to build a AR apk by Vuforia with Unity</title>
+      <link>https://chimerakang.github.io/posts/vuforia1/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/posts/vuforia1/</guid>
+      <description> 前言 什麼是AR，可以做什麼 準備 Unity 啟動 Vuforia 更新 Vuforia 建立 Vuforia ID 建立 Vuforia image db import imagedb into unity 建立AR場景 build apk and test finish, 感言 </description>
+    </item>
+    
+  </channel>
+</rss>

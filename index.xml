@@ -18,8 +18,9 @@
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/about/about/</guid>
-      <description> Hi there My name is Chimera I&amp;rsquo;m a programmer for interest and fun. Right now focus on:
- game (c++, unity, opengl) mobile (obj-c, java) AI (recognition) Network (chat, video streaming, match making ) VR (study, game) AR (lbs, card game, navigation )   My Email  </description>
+      <description> Hi there My name is Chimera. I&amp;rsquo;m a programmer for interest and fun.
+Right now focus on:
+ game (c++, unity, opengl) mobile (obj-c, java) AI (face recognition, voice recognition, neural network, tensorflow, caffe) Network (chat, video streaming, match making, proxy ) VR (study, game) AR (lbs, card game, navigation )   My Email  </description>
     </item>
     
     <item>
@@ -43,6 +44,15 @@ baseURL = &amp;quot;https://chimerakang.github.io/&amp;quot; languageCode = &amp
       <guid>https://chimerakang.github.io/posts/post2github/</guid>
       <description>init git 首先進入blog目錄，初始化git環境，同時將github的
 .travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add . - git commit -m &amp;quot;Update Blog By TravisCI with Build $TRAVIS_BUILD_NUMBER&amp;quot; - git tag v0.</description>
+    </item>
+    
+    <item>
+      <title>How to build a AR apk by Vuforia with Unity</title>
+      <link>https://chimerakang.github.io/posts/vuforia1/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/posts/vuforia1/</guid>
+      <description> 前言 什麼是AR，可以做什麼 準備 Unity 啟動 Vuforia 更新 Vuforia 建立 Vuforia ID 建立 Vuforia image db import imagedb into unity 建立AR場景 build apk and test finish, 感言 </description>
     </item>
     
   </channel>
