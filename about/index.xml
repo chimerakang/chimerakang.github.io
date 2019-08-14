@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Abouts on Walking with cybersoul</title>
+    <title>Abouts on 漫步在數位靈魂之中</title>
     <link>https://chimerakang.github.io/about/</link>
-    <description>Recent content in Abouts on Walking with cybersoul</description>
+    <description>Recent content in Abouts on 漫步在數位靈魂之中</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Chimera</copyright>
     <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chimerakang.github.io/about/index.xml" rel="self" type="application/rss+xml" />

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-tw">
 <head>
   
-    <title>First Post :: Walking with cybersoul — A easy, wishper for programmers</title>
+    <title>Build my first blog by Hugo and Github, auto deploy by Travis &lt;1&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="this is first commit for my blog."/>
-<meta name="keywords" content=""/>
+<meta name="description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務 Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github  .travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add ."/>
+<meta name="keywords" content="hugo, travis, github"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://chimerakang.github.io/posts/first-post/" />
 
@@ -28,19 +28,19 @@
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="First Post :: Walking with cybersoul — A easy, wishper for programmers" />
-<meta name="twitter:description" content="this is first commit for my blog." />
+<meta name="twitter:title" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;1&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語" />
+<meta name="twitter:description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務 Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github  .travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add ." />
 <meta name="twitter:site" content="https://chimerakang.github.io/" />
 <meta name="twitter:creator" content="Chimera" />
 <meta name="twitter:image" content="">
 
 
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh-tw" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="First Post :: Walking with cybersoul — A easy, wishper for programmers">
-<meta property="og:description" content="this is first commit for my blog." />
+<meta property="og:title" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;1&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語">
+<meta property="og:description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務 Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github  .travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add ." />
 <meta property="og:url" content="https://chimerakang.github.io/posts/first-post/" />
-<meta property="og:site_name" content="First Post" />
+<meta property="og:site_name" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;1&gt;" />
 <meta property="og:image" content="">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
@@ -68,7 +68,7 @@
     <div class="header__logo">
       <a href="/">
   <div class="logo">
-    Terminal
+    首頁
   </div>
 </a>
 
@@ -81,11 +81,11 @@
     
       
         
-          <li><a href="/about/about">About</a></li>
+          <li><a href="/posts">貼文</a></li>
         
       
         
-          <li><a href="/posts">Posts</a></li>
+          <li><a href="/about/about">關於我</a></li>
         
       
       
@@ -97,11 +97,11 @@
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/about/about">About</a></li>
+        <li><a href="/posts">貼文</a></li>
       
     
       
-        <li><a href="/posts">Posts</a></li>
+        <li><a href="/about/about">關於我</a></li>
       
     
     
@@ -116,7 +116,7 @@
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://chimerakang.github.io/posts/first-post/">First Post</a></h1>
+    <a href="https://chimerakang.github.io/posts/first-post/">Build my first blog by Hugo and Github, auto deploy by Travis <1></a></h1>
   <div class="post-meta">
       
     <span class="post-date">
@@ -131,11 +131,67 @@
   </div>
 
   
+  <span class="post-tags">
+    
+    #<a href="https://chimerakang.github.io/tags/hugo/">hugo</a>&nbsp;
+    
+    #<a href="https://chimerakang.github.io/tags/travis/">travis</a>&nbsp;
+    
+    #<a href="https://chimerakang.github.io/tags/github/">github</a>&nbsp;
+    
+  </span>
+  
 
   
 
   <div class="post-content">
-    <p>this is first commit for my blog.</p>
+    
+
+<h1 id="前言">前言</h1>
+
+<ul>
+<li>Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援</li>
+<li>Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務</li>
+<li>Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github</li>
+</ul>
+
+<h1 id="travis-yml">.travis.yml</h1>
+
+<pre><code>language: go
+
+go:
+  - &quot;1.8&quot;  # 指定Golang 1.8
+
+install:
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb
+    - sudo dpkg -i hugo*.deb
+
+before_script:
+  - echo -e &quot;Host github.com\n\tStrictHostKeyChecking no\n&quot; &gt;&gt; ~/.ssh/config
+  - git config --global user.email ${GITHUB_EMAIL}
+  - git config --global user.name ${GITHUB_USERNAME}
+
+script:
+  - hugo 
+
+after_script:
+  - git clone &quot;https://chimerakang:${GithubToken}@${GH_REF}&quot; github-pages
+  - rm github-pages/public -rf
+  - cp ./public/* github-pages -rf
+  - cd github-pages
+  - git add .
+  - git commit -m &quot;Update Blog By TravisCI with Build $TRAVIS_BUILD_NUMBER&quot;
+  - git tag v0.0.$TRAVIS_BUILD_NUMBER -a -m &quot;Auto Taged By TravisCI With Build $TRAVIS_BUILD_NUMBER&quot;
+  # github Pages
+  - git push --force &quot;https://${GITHUB_TOKEN}@${GH_REF}&quot; master:master
+  # github Pages
+  - git push &quot;https://${GITHUB_TOKEN}@${GH_REF}&quot; master:master --tags
+
+env: 
+  global:
+    - GH_REF: github.com/chimerakang/chimerakang.github.io.git
+
+</code></pre>
 
   </div>
   
@@ -150,10 +206,7 @@
     <footer class="footer">
   <div class="footer__inner">
     
-      <div class="copyright">
-        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
-        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
-      </div>
+      <div class="copyright copyright--user">Chimera</div>
     
   </div>
 </footer>

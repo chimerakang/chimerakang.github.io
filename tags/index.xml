@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Walking with cybersoul</title>
+    <title>Tags on 漫步在數位靈魂之中</title>
     <link>https://chimerakang.github.io/tags/</link>
-    <description>Recent content in Tags on Walking with cybersoul</description>
+    <description>Recent content in Tags on 漫步在數位靈魂之中</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Chimera</copyright>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chimerakang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>github</title>
+      <link>https://chimerakang.github.io/tags/github/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://chimerakang.github.io/tags/hugo/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travis</title>
+      <link>https://chimerakang.github.io/tags/travis/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/travis/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,43 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://chimerakang.github.io/about/about/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chimerakang.github.io/about/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chimerakang.github.io/posts/first-post/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chimerakang.github.io/posts/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chimerakang.github.io/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chimerakang.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chimerakang.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	
+	<sitemap>
+	   	<loc>https://chimerakang.github.io/en/sitemap.xml</loc>
+		
+	</sitemap>
+	
+	<sitemap>
+	   	<loc>https://chimerakang.github.io/zh-tw/sitemap.xml</loc>
+		
+	   	<lastmod>2019-08-14T00:00:00+00:00</lastmod>
+		
+	</sitemap>
+	
+</sitemapindex>
