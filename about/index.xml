@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Walking with cybersoul</title>
-    <link>https://chimerakang.github.io/</link>
-    <description>Recent content on Walking with cybersoul</description>
+    <title>Abouts on Walking with cybersoul</title>
+    <link>https://chimerakang.github.io/about/</link>
+    <description>Recent content in Abouts on Walking with cybersoul</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://chimerakang.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chimerakang.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://chimerakang.github.io/about/about/</guid>
       <description> Hi there My name is Chimera I&amp;rsquo;m a programmer for interest and fun. Right now focus on:
  game (c++, unity, opengl) mobile (obj-c, java) AI (recognition) Network (chat, video streaming, match making ) VR (study, game) AR (lbs, card game, navigation )  </description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>https://chimerakang.github.io/posts/first-post/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://chimerakang.github.io/posts/first-post/</guid>
-      <description>this is first commit for my blog.</description>
     </item>
     
   </channel>
