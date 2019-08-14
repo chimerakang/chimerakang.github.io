@@ -6,7 +6,11 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務 Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github  .travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add ."/>
+<meta name="description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，就是靜態網頁，所以將Hugo建好的靜態網頁直接上傳到Github是很合適的，而且是免費又快速，不用自己維護，這世界怎麼有這麼佛心的服務 Travis 是第一次接觸，大概瞭解了一下這是個提供高度自動化工具，只要寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github。據說功能不僅止於此，有機會可以來做一些更複雜有趣的事情  安裝 Hugo mac使用者如果已經安裝brew的話，只要輸入以下指令即可安裝Hugo
+brew install hugo  目前最新的版本應該是 0.56.3
+建立部落格 開啟Terminal，只要輸入底下的指令，Hugo馬上會在blog這個目錄下產生所有需要的資源和程式碼
+Hugo new site blog  修改 config.toml 接著開始做一些修改，首先進入目錄中需要修改config.toml，最重要的是新增theme，Hugo的生態系有相當多的theme，你可以選擇你喜歡的加入，底下是我的第一版的設定：
+baseURL = &amp;quot;https://chimerakang.github.io/&amp;quot; languageCode = &amp;quot;en-us&amp;quot; defaultContentLanguage = &amp;quot;zh-tw&amp;quot; title = &amp;quot;Chimera&#39;s Blog&amp;quot; theme = &amp;quot;terminal&amp;quot; paginate = 5 [Author] name = &amp;quot;Chimera&amp;quot; [params] contentTypeName = &amp;quot;posts&amp;quot; themeColor = &amp;quot;green&amp;quot; showMenuItems = 2 # set theme to full screen width fullWidthTheme = false # center theme with default width centerTheme = false [languages] [languages."/>
 <meta name="keywords" content="hugo, travis, github"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://chimerakang.github.io/posts/first-post/" />
@@ -29,7 +33,11 @@
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;1&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語" />
-<meta name="twitter:description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務 Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github  .travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add ." />
+<meta name="twitter:description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，就是靜態網頁，所以將Hugo建好的靜態網頁直接上傳到Github是很合適的，而且是免費又快速，不用自己維護，這世界怎麼有這麼佛心的服務 Travis 是第一次接觸，大概瞭解了一下這是個提供高度自動化工具，只要寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github。據說功能不僅止於此，有機會可以來做一些更複雜有趣的事情  安裝 Hugo mac使用者如果已經安裝brew的話，只要輸入以下指令即可安裝Hugo
+brew install hugo  目前最新的版本應該是 0.56.3
+建立部落格 開啟Terminal，只要輸入底下的指令，Hugo馬上會在blog這個目錄下產生所有需要的資源和程式碼
+Hugo new site blog  修改 config.toml 接著開始做一些修改，首先進入目錄中需要修改config.toml，最重要的是新增theme，Hugo的生態系有相當多的theme，你可以選擇你喜歡的加入，底下是我的第一版的設定：
+baseURL = &amp;quot;https://chimerakang.github.io/&amp;quot; languageCode = &amp;quot;en-us&amp;quot; defaultContentLanguage = &amp;quot;zh-tw&amp;quot; title = &amp;quot;Chimera&#39;s Blog&amp;quot; theme = &amp;quot;terminal&amp;quot; paginate = 5 [Author] name = &amp;quot;Chimera&amp;quot; [params] contentTypeName = &amp;quot;posts&amp;quot; themeColor = &amp;quot;green&amp;quot; showMenuItems = 2 # set theme to full screen width fullWidthTheme = false # center theme with default width centerTheme = false [languages] [languages." />
 <meta name="twitter:site" content="https://chimerakang.github.io/" />
 <meta name="twitter:creator" content="Chimera" />
 <meta name="twitter:image" content="">
@@ -38,7 +46,11 @@
 <meta property="og:locale" content="zh-tw" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;1&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語">
-<meta property="og:description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務 Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github  .travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add ." />
+<meta property="og:description" content="前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，就是靜態網頁，所以將Hugo建好的靜態網頁直接上傳到Github是很合適的，而且是免費又快速，不用自己維護，這世界怎麼有這麼佛心的服務 Travis 是第一次接觸，大概瞭解了一下這是個提供高度自動化工具，只要寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github。據說功能不僅止於此，有機會可以來做一些更複雜有趣的事情  安裝 Hugo mac使用者如果已經安裝brew的話，只要輸入以下指令即可安裝Hugo
+brew install hugo  目前最新的版本應該是 0.56.3
+建立部落格 開啟Terminal，只要輸入底下的指令，Hugo馬上會在blog這個目錄下產生所有需要的資源和程式碼
+Hugo new site blog  修改 config.toml 接著開始做一些修改，首先進入目錄中需要修改config.toml，最重要的是新增theme，Hugo的生態系有相當多的theme，你可以選擇你喜歡的加入，底下是我的第一版的設定：
+baseURL = &amp;quot;https://chimerakang.github.io/&amp;quot; languageCode = &amp;quot;en-us&amp;quot; defaultContentLanguage = &amp;quot;zh-tw&amp;quot; title = &amp;quot;Chimera&#39;s Blog&amp;quot; theme = &amp;quot;terminal&amp;quot; paginate = 5 [Author] name = &amp;quot;Chimera&amp;quot; [params] contentTypeName = &amp;quot;posts&amp;quot; themeColor = &amp;quot;green&amp;quot; showMenuItems = 2 # set theme to full screen width fullWidthTheme = false # center theme with default width centerTheme = false [languages] [languages." />
 <meta property="og:url" content="https://chimerakang.github.io/posts/first-post/" />
 <meta property="og:site_name" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;1&gt;" />
 <meta property="og:image" content="">
@@ -151,9 +163,129 @@
 
 <ul>
 <li>Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援</li>
-<li>Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務</li>
-<li>Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github</li>
+<li>Github 是個工程師必備良藥，也支援Pages服務，就是靜態網頁，所以將Hugo建好的靜態網頁直接上傳到Github是很合適的，而且是免費又快速，不用自己維護，這世界怎麼有這麼佛心的服務</li>
+<li>Travis 是第一次接觸，大概瞭解了一下這是個提供高度自動化工具，只要寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github。據說功能不僅止於此，有機會可以來做一些更複雜有趣的事情</li>
 </ul>
+
+<h1 id="安裝-hugo">安裝 Hugo</h1>
+
+<p>mac使用者如果已經安裝brew的話，只要輸入以下指令即可安裝Hugo</p>
+
+<pre><code>brew install hugo
+</code></pre>
+
+<p>目前最新的版本應該是 0.56.3</p>
+
+<h1 id="建立部落格">建立部落格</h1>
+
+<p>開啟Terminal，只要輸入底下的指令，Hugo馬上會在blog這個目錄下產生所有需要的資源和程式碼</p>
+
+<pre><code>Hugo new site blog
+</code></pre>
+
+<h1 id="修改-config-toml">修改 config.toml</h1>
+
+<p>接著開始做一些修改，首先進入目錄中需要修改config.toml，最重要的是新增theme，Hugo的生態系有相當多的<a href="https://themes.gohugo.io" title="Hugo themes">theme</a>，你可以選擇你喜歡的加入，底下是我的第一版的設定：</p>
+
+<pre><code>baseURL = &quot;https://chimerakang.github.io/&quot;
+languageCode = &quot;en-us&quot;
+defaultContentLanguage = &quot;zh-tw&quot;
+title = &quot;Chimera's Blog&quot;
+theme = &quot;terminal&quot;
+paginate = 5
+
+[Author]
+    name = &quot;Chimera&quot;
+
+[params]
+    contentTypeName = &quot;posts&quot;
+    themeColor = &quot;green&quot;
+    showMenuItems = 2
+    # set theme to full screen width
+    fullWidthTheme = false
+    # center theme with default width
+    centerTheme = false
+
+[languages]
+  [languages.en]
+    title = &quot;Walking with cybersoul&quot;
+    subtitle = &quot;A easy, wishper for programmers&quot;
+    keywords = &quot;&quot;
+    copyright = &quot;&quot;
+    menuMore = &quot;Show more&quot;
+    readMore = &quot;Read more&quot;
+    readOtherPosts = &quot;Read other posts&quot;
+
+    [languages.en.params.logo]
+      logoText = &quot;Terminal&quot;
+      logoHomeLink = &quot;/&quot;
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = &quot;about&quot;
+        name = &quot;About&quot;
+        url = &quot;/about/about&quot;
+      [[languages.en.menu.main]]
+        identifier = &quot;posts&quot;
+        name = &quot;Posts&quot;
+        url = &quot;/posts&quot;
+
+  [languages.zh-tw]
+    title = &quot;漫步在數位靈魂之中&quot;
+    subtitle = &quot;對工程師的輕鬆小語&quot;
+    keywords = &quot;&quot;
+    copyright = &quot;Chimera&quot;
+    menuMore = &quot;看更多&quot;
+    readMore = &quot;讀更多&quot;
+    readOtherPosts = &quot;讀其他的貼文&quot;
+
+    [languages.zh-tw.params.logo]
+      logoText = &quot;首頁&quot;
+      logoHomeLink = &quot;/&quot;
+
+    [languages.zh-tw.menu]
+      [[languages.zh-tw.menu.main]]
+        identifier = &quot;about&quot;
+        name = &quot;關於我&quot;
+        url = &quot;/about/about&quot;
+      [[languages.zh-tw.menu.main]]
+        identifier = &quot;posts&quot;
+        name = &quot;貼文&quot;
+        url = &quot;/posts&quot;
+
+</code></pre>
+
+<h1 id="安裝-theme">安裝 Theme</h1>
+
+<p>接著你需要把theme安裝起來，首先可以使用底下兩個指令抓回來</p>
+
+<p>You can also clone it directly to your Hugo folder:</p>
+
+<pre><code>git clone https://github.com/panr/hugo-theme-terminal.git themes/terminal 
+</code></pre>
+
+<p>If you don’t want to make any radical changes, it’s the best option, because you can get new updates when they are available. You can also include it as a git submodule:</p>
+
+<pre><code>git submodule add https://github.com/panr/hugo-theme-terminal.git themes/terminal
+</code></pre>
+
+<p>我是採用第二種做法，因為接下來自動化的時候可以讓Travis幫你處理掉theme的安裝工作，待會就可以知道差別在哪裡
+每個Theme都有一些不一樣的特性，只要稍微看一下每個作者寫的介紹應該可以很快上手</p>
+
+<h1 id="發佈第一則貼文">發佈第一則貼文</h1>
+
+<p>終於要開始發廢文了！！很簡單，照著以下指令即可發文</p>
+
+<pre><code>hugo new posts/first.md
+</code></pre>
+
+<p>Hugo就會在content/posts/下面產生一個first.md這個檔案
+此時什麼都不需要做什麼，在輸入底下的指令：</p>
+
+<pre><code>hugo server
+</code></pre>
+
+<p>此時如果沒有錯誤的話，Hugo會將所有網站處理好，並開始運行一個web service，此時開啟網頁輸入 : &ldquo;localhost:1313&rdquo; 應該就可以看到你的廢文了</p>
 
 <h1 id="travis-yml">.travis.yml</h1>
 
@@ -192,6 +324,9 @@ env:
     - GH_REF: github.com/chimerakang/chimerakang.github.io.git
 
 </code></pre>
+
+<p>參考：
+- <a href="http://qfq.coding.me/post/hugo搭建博客2/">QFQ的博客</a></p>
 
   </div>
   

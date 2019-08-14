@@ -18,7 +18,11 @@
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/posts/first-post/</guid>
-      <description>前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，簡單來說就是靜態網頁，將Hugo建好的靜態網頁直接上傳到Github是很合適的，重點是免費又快速，還不用自己維護一個網站，這世界怎麼有這麼佛心的服務 Travis 提供高度自動化工具，寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github  .travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add .</description>
+      <description>前言  Hugo 是個快速產生靜態網站的工具，golang開發，快速有效，有很多theme可以支援 Github 是個工程師必備良藥，也支援Pages服務，就是靜態網頁，所以將Hugo建好的靜態網頁直接上傳到Github是很合適的，而且是免費又快速，不用自己維護，這世界怎麼有這麼佛心的服務 Travis 是第一次接觸，大概瞭解了一下這是個提供高度自動化工具，只要寫個簡單的腳本，就可以支援很多自動化工作，剛好又高度整合Github。據說功能不僅止於此，有機會可以來做一些更複雜有趣的事情  安裝 Hugo mac使用者如果已經安裝brew的話，只要輸入以下指令即可安裝Hugo
+brew install hugo  目前最新的版本應該是 0.56.3
+建立部落格 開啟Terminal，只要輸入底下的指令，Hugo馬上會在blog這個目錄下產生所有需要的資源和程式碼
+Hugo new site blog  修改 config.toml 接著開始做一些修改，首先進入目錄中需要修改config.toml，最重要的是新增theme，Hugo的生態系有相當多的theme，你可以選擇你喜歡的加入，底下是我的第一版的設定：
+baseURL = &amp;quot;https://chimerakang.github.io/&amp;quot; languageCode = &amp;quot;en-us&amp;quot; defaultContentLanguage = &amp;quot;zh-tw&amp;quot; title = &amp;quot;Chimera&#39;s Blog&amp;quot; theme = &amp;quot;terminal&amp;quot; paginate = 5 [Author] name = &amp;quot;Chimera&amp;quot; [params] contentTypeName = &amp;quot;posts&amp;quot; themeColor = &amp;quot;green&amp;quot; showMenuItems = 2 # set theme to full screen width fullWidthTheme = false # center theme with default width centerTheme = false [languages] [languages.</description>
     </item>
     
   </channel>
