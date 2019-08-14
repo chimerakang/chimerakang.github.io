@@ -36,12 +36,16 @@ baseURL = &amp;quot;https://chimerakang.github.io/&amp;quot; languageCode = &amp
     </item>
     
     <item>
-      <title>How to build a AR apk by Vuforia with Unity</title>
+      <title>How to build a AR app by Unity with Vuforia</title>
       <link>https://chimerakang.github.io/posts/vuforia1/</link>
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/posts/vuforia1/</guid>
-      <description> 前言 什麼是AR，可以做什麼 準備 Unity 啟動 Vuforia 更新 Vuforia 建立 Vuforia ID 建立 Vuforia image db import imagedb into unity 建立AR場景 build apk and test finish, 感言 </description>
+      <description> 前言 目前主要在unity上面有兩間廠商支援AR，一間是鼎鼎大名的Google大神，最近剛開始推廣OpenAR這個自家服務，雖然沒有什麼大問題，只是在相容性上面有很大問題，很多手機不能執行，所以選擇Vuforia這個套件是比較理想的。Vuforia已經在Unity 2017之後整合到Unity當中，所以不需要下載即可使用，只要在設定中把選項打開即可，過程輕鬆愉快許多。但是為求慎重，還是建議更新到最新版本，目前這個時間點是(8.3.8)
+什麼是AR，可以做什麼 另外很多人不了解AR是甚麼，如果跟大家說，寶可夢算是第一個成功的AR產品，這樣子就比較容易理解。AR的服務大致上是利用手機的攝影鏡頭，並結合相關的技術，將虛擬的物件顯示在攝影畫面中，將兩者做結合。
+目前大部分實現都是遊戲為主，不過AR也適合結合衛星導航，可以在投影在抬頭顯示器上面，清楚標示行進方向或者地標地址 還有一部分產品是結合AR眼睛，讓使用者直接佩戴，適合做教育訓練，讓新進員工可以按照步驟一步步操作維修訓練或者各項技術實習工作。
+準備 Unity 首先開啟Unity 2018，選擇這個版本的主要原因是因為穩定度高，而且有問題還可以持續得到原廠更新服務。 * 第一步先把Vuforia的選項打開
+啟動 Vuforia 更新 Vuforia 建立 Vuforia ID 建立 Vuforia image db import imagedb into unity 建立AR場景 build apk and test finish, 感言 </description>
     </item>
     
   </channel>
