@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Chimera</copyright>
-    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chimerakang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>AR</title>
       <link>https://chimerakang.github.io/tags/ar/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/tags/ar/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Unity</title>
       <link>https://chimerakang.github.io/tags/unity/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/tags/unity/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Vuforia</title>
       <link>https://chimerakang.github.io/tags/vuforia/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/tags/vuforia/</guid>
       <description></description>
@@ -42,9 +42,18 @@
     <item>
       <title>android</title>
       <link>https://chimerakang.github.io/tags/android/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iOS</title>
+      <link>https://chimerakang.github.io/tags/ios/</link>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/ios/</guid>
       <description></description>
     </item>
     
@@ -63,15 +72,6 @@
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iOS</title>
-      <link>https://chimerakang.github.io/tags/ios/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://chimerakang.github.io/tags/ios/</guid>
       <description></description>
     </item>
     
