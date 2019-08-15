@@ -41,11 +41,13 @@ baseURL = &amp;quot;https://chimerakang.github.io/&amp;quot; languageCode = &amp
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/posts/vuforia1/</guid>
-      <description> 前言 目前主要在unity上面有兩間廠商支援AR，一間是鼎鼎大名的Google大神，最近剛開始推廣OpenAR這個自家服務，雖然沒有什麼大問題，只是在相容性上面有很大問題，很多手機不能執行，所以選擇Vuforia這個套件是比較理想的。Vuforia已經在Unity 2017之後整合到Unity當中，所以不需要下載即可使用，只要在設定中把選項打開即可，過程輕鬆愉快許多。但是為求慎重，還是建議更新到最新版本，目前這個時間點是(8.3.8)
+      <description> 前言 目前主要在unity上面有兩間廠商支援AR，一間是鼎鼎大名的Google大神，最近剛開始推廣OpenAR這個自家服務，雖然沒有什麼大問題，只是在相容性上面有很大問題，很多手機不能執行，所以選擇Vuforia這個套件是比較理想的。
 什麼是AR，可以做什麼 另外很多人不了解AR是甚麼，如果跟大家說，寶可夢算是第一個成功的AR產品，這樣子就比較容易理解。AR的服務大致上是利用手機的攝影鏡頭，並結合相關的技術，將虛擬的物件顯示在攝影畫面中，將兩者做結合。
 目前大部分實現都是遊戲為主，不過AR也適合結合衛星導航，可以在投影在抬頭顯示器上面，清楚標示行進方向或者地標地址 還有一部分產品是結合AR眼睛，讓使用者直接佩戴，適合做教育訓練，讓新進員工可以按照步驟一步步操作維修訓練或者各項技術實習工作。
-準備 Unity 首先開啟Unity 2018，選擇這個版本的主要原因是因為穩定度高，而且有問題還可以持續得到原廠更新服務。 * 第一步先把Vuforia的選項打開
-啟動 Vuforia 更新 Vuforia 建立 Vuforia ID 建立 Vuforia image db import imagedb into unity 建立AR場景 build apk and test finish, 感言 </description>
+準備 Unity，啟動 Vuforia 首先開啟Unity 2018，選擇這個版本的主要原因是因為穩定度高，而且有問題還可以持續得到原廠更新服務。 * 第一步先把Vuforia的選項打開(File -&amp;gt; Build Settings -&amp;gt; Player Settings&amp;hellip; -&amp;gt; Inspector -&amp;gt; XR Settings -&amp;gt; Vuforia Augmented Reality) 更新 Vuforia Vuforia已經在Unity 2017之後整合到Unity當中，不需要下載即可使用，在設定中把選項打開即可。但是為求慎重，還是建議更新到最新版本，目前這個時間點是(8.3.8)
+建立 Vuforia ID 首先得到Vuforia Developer Page上註冊一個帳號 接著登入Vuforia 按下右上角的Get Development Key 接著新增一組Key，待會這個Key會出現在列表中 在列表中點擊名稱進入頁面即可看到一組序號，複製這組序號，待會貼到Unity Editor上面 將剛剛的序號貼在這裡即可 建立 Vuforia image db 回到Vuforia的網頁，切換到*Target Manager*的頁面，新增一個database，這個檔案待會需要下載並安裝到unity當中 新增的Database會顯示在列表中，點擊進入頁面，此時點擊Add Target ！Add Target 此時選擇將一張照片上傳，並填入此照片的寬度和一個名稱，按下Add之後，稍等一下，Vuforia會將此圖片作一些處理，大約幾分鐘後顯示Complete，下載database檔案，會直接存檔成.unitypackage的檔案格式，待會直接在Unity中import進專案中使用
+import imagedb into unity 回到Unity，此時我們將剛剛的database檔案import進來(Assets -&amp;gt; Import Package -&amp;gt; Custom Package&amp;hellip;)，
+建立AR場景 build apk and test finish, 感言 </description>
     </item>
     
   </channel>
