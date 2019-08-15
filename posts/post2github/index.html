@@ -6,8 +6,10 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="init git 首先進入blog目錄，初始化git環境，同時將github的
-.travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add . - git commit -m &amp;quot;Update Blog By TravisCI with Build $TRAVIS_BUILD_NUMBER&amp;quot; - git tag v0."/>
+<meta name="description" content="Github設定 首先需要建立兩個Repository，一個是 Username.github.io，這個github會自動啟動pages服務。另外一個repository可以隨便命名，我命名為BlogSource，記得設定成private，這個倉庫是要放local電腦上所有hugo的相關資料和設定，因為有可能包含私人的參數，這些資料最好不要放在公開的repository上，避免有心人利用
+BlogSource建立好之後，複製git網址並將網址加入到在本地端的hugo目錄的git config中，git相關的設定請自行搜尋建立相關知識。這裡github也很貼心的提供相關的操作，只要按照步驟應該能夠完成設定 再來我們要建立一個token，位置在 Settings -&amp;gt; Developer settings -&amp;gt; Personal access tokens -&amp;gt; Generate new token ，要將 repo:status, repo_deployment, public_repo三個選項勾起來
+然後你會產生出來一串憑證，請保存起來，接著需要這個憑證可以讓 Travis-ci 執行自動化工作後，接著將最後的靜態網頁push to pages服務的repository上 Travis設定 到Travis-ci 建立一個帳號，可是事實上travis-ci.com已經跟github高度整合，只需要點擊右上角的，接著點擊 Manage repositories on Github，預設可以控制所有的repository，這樣有點恐怖，所以我這裡改成指定特定的倉庫即可 此時會回到Travis-ci，就可以看到BlogSource出現在列表中 開始設定token到Travis-ci，點擊BlogSource 旁的settings按鈕，如畫面將選項打開，同時新增一組Environment Variables，命名為GITHUB_TOKEN，Value就填入剛剛在github產生的憑證字串，然後按下Add。完畢後Travis-ci的設定工作就算完成了 撰寫 .travis.yml 最後我們回到local端，到hugo site的目錄下新增一個 .travis.yml，內容如下
+language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user."/>
 <meta name="keywords" content="hugo, travis, github"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://chimerakang.github.io/posts/post2github/" />
@@ -30,8 +32,10 @@
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;2&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語" />
-<meta name="twitter:description" content="init git 首先進入blog目錄，初始化git環境，同時將github的
-.travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add . - git commit -m &amp;quot;Update Blog By TravisCI with Build $TRAVIS_BUILD_NUMBER&amp;quot; - git tag v0." />
+<meta name="twitter:description" content="Github設定 首先需要建立兩個Repository，一個是 Username.github.io，這個github會自動啟動pages服務。另外一個repository可以隨便命名，我命名為BlogSource，記得設定成private，這個倉庫是要放local電腦上所有hugo的相關資料和設定，因為有可能包含私人的參數，這些資料最好不要放在公開的repository上，避免有心人利用
+BlogSource建立好之後，複製git網址並將網址加入到在本地端的hugo目錄的git config中，git相關的設定請自行搜尋建立相關知識。這裡github也很貼心的提供相關的操作，只要按照步驟應該能夠完成設定 再來我們要建立一個token，位置在 Settings -&amp;gt; Developer settings -&amp;gt; Personal access tokens -&amp;gt; Generate new token ，要將 repo:status, repo_deployment, public_repo三個選項勾起來
+然後你會產生出來一串憑證，請保存起來，接著需要這個憑證可以讓 Travis-ci 執行自動化工作後，接著將最後的靜態網頁push to pages服務的repository上 Travis設定 到Travis-ci 建立一個帳號，可是事實上travis-ci.com已經跟github高度整合，只需要點擊右上角的，接著點擊 Manage repositories on Github，預設可以控制所有的repository，這樣有點恐怖，所以我這裡改成指定特定的倉庫即可 此時會回到Travis-ci，就可以看到BlogSource出現在列表中 開始設定token到Travis-ci，點擊BlogSource 旁的settings按鈕，如畫面將選項打開，同時新增一組Environment Variables，命名為GITHUB_TOKEN，Value就填入剛剛在github產生的憑證字串，然後按下Add。完畢後Travis-ci的設定工作就算完成了 撰寫 .travis.yml 最後我們回到local端，到hugo site的目錄下新增一個 .travis.yml，內容如下
+language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user." />
 <meta name="twitter:site" content="https://chimerakang.github.io/" />
 <meta name="twitter:creator" content="Chimera" />
 <meta name="twitter:image" content="">
@@ -40,8 +44,10 @@
 <meta property="og:locale" content="zh-tw" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;2&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語">
-<meta property="og:description" content="init git 首先進入blog目錄，初始化git環境，同時將github的
-.travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add . - git commit -m &amp;quot;Update Blog By TravisCI with Build $TRAVIS_BUILD_NUMBER&amp;quot; - git tag v0." />
+<meta property="og:description" content="Github設定 首先需要建立兩個Repository，一個是 Username.github.io，這個github會自動啟動pages服務。另外一個repository可以隨便命名，我命名為BlogSource，記得設定成private，這個倉庫是要放local電腦上所有hugo的相關資料和設定，因為有可能包含私人的參數，這些資料最好不要放在公開的repository上，避免有心人利用
+BlogSource建立好之後，複製git網址並將網址加入到在本地端的hugo目錄的git config中，git相關的設定請自行搜尋建立相關知識。這裡github也很貼心的提供相關的操作，只要按照步驟應該能夠完成設定 再來我們要建立一個token，位置在 Settings -&amp;gt; Developer settings -&amp;gt; Personal access tokens -&amp;gt; Generate new token ，要將 repo:status, repo_deployment, public_repo三個選項勾起來
+然後你會產生出來一串憑證，請保存起來，接著需要這個憑證可以讓 Travis-ci 執行自動化工作後，接著將最後的靜態網頁push to pages服務的repository上 Travis設定 到Travis-ci 建立一個帳號，可是事實上travis-ci.com已經跟github高度整合，只需要點擊右上角的，接著點擊 Manage repositories on Github，預設可以控制所有的repository，這樣有點恐怖，所以我這裡改成指定特定的倉庫即可 此時會回到Travis-ci，就可以看到BlogSource出現在列表中 開始設定token到Travis-ci，點擊BlogSource 旁的settings按鈕，如畫面將選項打開，同時新增一組Environment Variables，命名為GITHUB_TOKEN，Value就填入剛剛在github產生的憑證字串，然後按下Add。完畢後Travis-ci的設定工作就算完成了 撰寫 .travis.yml 最後我們回到local端，到hugo site的目錄下新增一個 .travis.yml，內容如下
+language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user." />
 <meta property="og:url" content="https://chimerakang.github.io/posts/post2github/" />
 <meta property="og:site_name" content="Build my first blog by Hugo and Github, auto deploy by Travis &lt;2&gt;" />
 <meta property="og:image" content="">
@@ -150,11 +156,35 @@
   <div class="post-content">
     
 
-<h1 id="init-git">init git</h1>
+<h1 id="github設定">Github設定</h1>
 
-<p>首先進入blog目錄，初始化git環境，同時將github的</p>
+<p>首先需要建立兩個Repository，一個是 Username.github.io，這個github會自動啟動pages服務。另外一個repository可以隨便命名，我命名為BlogSource，記得設定成private，這個倉庫是要放local電腦上所有hugo的相關資料和設定，因為有可能包含私人的參數，這些資料最好不要放在公開的repository上，避免有心人利用</p>
 
-<h1 id="travis-yml">.travis.yml</h1>
+<p><img src="/images/github/shot1.png" alt="create BlogSource" />
+BlogSource建立好之後，複製git網址並將網址加入到在本地端的hugo目錄的git config中，git相關的設定請自行搜尋建立相關知識。這裡github也很貼心的提供相關的操作，只要按照步驟應該能夠完成設定
+<img src="/images/github/shot2.png" alt="BlogSource git config" /></p>
+
+<p>再來我們要建立一個token，位置在 <em>Settings -&gt; Developer settings -&gt; Personal access tokens -&gt; Generate new token</em> ，要將 repo:status, repo_deployment, public_repo三個選項勾起來</p>
+
+<p><img src="/images/github/shot3.png" alt="generate token" /></p>
+
+<p>然後你會產生出來一串憑證，請保存起來，接著需要這個憑證可以讓 Travis-ci 執行自動化工作後，接著將最後的靜態網頁push to pages服務的repository上
+<img src="/images/github/shot4.png" alt="copy token string" /></p>
+
+<h1 id="travis設定">Travis設定</h1>
+
+<p>到<a href="https://travis-ci.com">Travis-ci</a> 建立一個帳號，可是事實上travis-ci.com已經跟github高度整合，只需要點擊右上角的<img src="/images/travis/shot1.png" alt="sign in with github" />，接著點擊 Manage repositories on Github，預設可以控制所有的repository，這樣有點恐怖，所以我這裡改成指定特定的倉庫即可
+<img src="/images/travis/shot2.png" alt="Only select repositories" /></p>
+
+<p>此時會回到Travis-ci，就可以看到BlogSource出現在列表中
+<img src="/images/travis/shot3.png" alt="import repositories" /></p>
+
+<p>開始設定token到Travis-ci，點擊BlogSource 旁的settings按鈕，如畫面將選項打開，同時新增一組Environment Variables，命名為GITHUB_TOKEN，Value就填入剛剛在github產生的憑證字串，然後按下Add。完畢後Travis-ci的設定工作就算完成了
+<img src="/images/travis/shot4.png" alt="add github_token" /></p>
+
+<h1 id="撰寫-travis-yml">撰寫 .travis.yml</h1>
+
+<p>最後我們回到local端，到hugo site的目錄下新增一個 .travis.yml，內容如下</p>
 
 <pre><code>language: go
 
@@ -191,6 +221,16 @@ env:
     - GH_REF: github.com/chimerakang/chimerakang.github.io.git
 
 </code></pre>
+
+<p>撰寫這個script之前我參考了相當多網路文章，試了一整天發現很多錯誤，根本做不到他們說的可以自動更新我的Pages頁面。或許是年代久遠，或者很多人只是互相抄襲我不知道，直到自己大概想一下前因後果，了解Travis-ci的運作原理是在Travis-ci中建立一個虛擬機，可能也是利用docker的方式，每次建立hugo環境，然後將更新的BlogSource目錄下執行hugo指令將靜態網頁產生出來，這個動作和我們在本機端是一樣的。</p>
+
+<p>但是在after_script階段的動作就相當重要，先將個人pages的repository pull到 github-pages中，然後將靜態網頁的結果正個複製到 github-pages目錄中，最後再push回去，此時你的部落格就更新了</p>
+
+<p>所以之後只要在本地端的內容寫了新的貼文或者修改內容，push to github，Travis-ci就會自動將部落格更新，這樣世界是不是很美好</p>
+
+<h1 id="附註">附註</h1>
+
+<p>注意一下其實travis-ci有兩個服務，幾乎所有人都是介紹<a href="https://travis-ci.org">travis-ci.org</a>，但是這個只能支援public repository，在我看來實在不妥，畢竟以資安的角度來看，一些設定和個人參數，甚至連token這些資料放在每個人都可以任意存取的地方，實在是風險很大。還好我後來找了資料發現原來travis-ci.com是個孿生兄弟，是商業版的服務，不一樣的是支援了private repository的存取，於是改用travis-ci.com是比較安全的選擇，至少private repository是無法任意存取的，比較令人放心將資料放在上面。</p>
 
 <hr />
 

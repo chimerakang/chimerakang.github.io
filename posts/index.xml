@@ -46,8 +46,10 @@ baseURL = &amp;quot;https://chimerakang.github.io/&amp;quot; languageCode = &amp
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/posts/post2github/</guid>
-      <description>init git 首先進入blog目錄，初始化git環境，同時將github的
-.travis.yml language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.email ${GITHUB_EMAIL} - git config --global user.name ${GITHUB_USERNAME} script: - hugo after_script: - git clone &amp;quot;https://chimerakang:${GithubToken}@${GH_REF}&amp;quot; github-pages - rm github-pages/public -rf - cp ./public/* github-pages -rf - cd github-pages - git add . - git commit -m &amp;quot;Update Blog By TravisCI with Build $TRAVIS_BUILD_NUMBER&amp;quot; - git tag v0.</description>
+      <description>Github設定 首先需要建立兩個Repository，一個是 Username.github.io，這個github會自動啟動pages服務。另外一個repository可以隨便命名，我命名為BlogSource，記得設定成private，這個倉庫是要放local電腦上所有hugo的相關資料和設定，因為有可能包含私人的參數，這些資料最好不要放在公開的repository上，避免有心人利用
+BlogSource建立好之後，複製git網址並將網址加入到在本地端的hugo目錄的git config中，git相關的設定請自行搜尋建立相關知識。這裡github也很貼心的提供相關的操作，只要按照步驟應該能夠完成設定 再來我們要建立一個token，位置在 Settings -&amp;gt; Developer settings -&amp;gt; Personal access tokens -&amp;gt; Generate new token ，要將 repo:status, repo_deployment, public_repo三個選項勾起來
+然後你會產生出來一串憑證，請保存起來，接著需要這個憑證可以讓 Travis-ci 執行自動化工作後，接著將最後的靜態網頁push to pages服務的repository上 Travis設定 到Travis-ci 建立一個帳號，可是事實上travis-ci.com已經跟github高度整合，只需要點擊右上角的，接著點擊 Manage repositories on Github，預設可以控制所有的repository，這樣有點恐怖，所以我這裡改成指定特定的倉庫即可 此時會回到Travis-ci，就可以看到BlogSource出現在列表中 開始設定token到Travis-ci，點擊BlogSource 旁的settings按鈕，如畫面將選項打開，同時新增一組Environment Variables，命名為GITHUB_TOKEN，Value就填入剛剛在github產生的憑證字串，然後按下Add。完畢後Travis-ci的設定工作就算完成了 撰寫 .travis.yml 最後我們回到local端，到hugo site的目錄下新增一個 .travis.yml，內容如下
+language: go go: - &amp;quot;1.8&amp;quot; # 指定Golang 1.8 install: - wget https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_0.55.4_Linux-64bit.deb - sudo dpkg -i hugo*.deb before_script: - echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config - git config --global user.</description>
     </item>
     
   </channel>
