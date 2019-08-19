@@ -3,25 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://chimerakang.github.io/tags/ar/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chimerakang.github.io/posts/vuforia1/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+    <loc>https://chimerakang.github.io/posts/wave_daily1/</loc>
+    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chimerakang.github.io/posts/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://chimerakang.github.io/tags/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -37,8 +31,47 @@
   
   <url>
     <loc>https://chimerakang.github.io/tags/unity/</loc>
+    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chimerakang.github.io/tags/htc/</loc>
+    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chimerakang.github.io/tags/wave-sdk/</loc>
+    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chimerakang.github.io/</loc>
+    <lastmod>2019-08-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chimerakang.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://chimerakang.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://chimerakang.github.io/tags/ar/</loc>
     <lastmod>2019-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chimerakang.github.io/posts/vuforia1/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -57,22 +90,6 @@
     <loc>https://chimerakang.github.io/tags/ios/</loc>
     <lastmod>2019-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chimerakang.github.io/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://chimerakang.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://chimerakang.github.io/"
-                />
   </url>
   
   <url>

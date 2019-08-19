@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Chimera</copyright>
-    <lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chimerakang.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTC Wave SDK Development Daily &lt;1&gt;</title>
+      <link>https://chimerakang.github.io/posts/wave_daily1/</link>
+      <pubDate>Mon, 19 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/posts/wave_daily1/</guid>
+      <description>前言 上個月去聽了一下HTC新的分享會得知Focus推出了一個整合型的SDK，號稱可以支援各家Standalone的頭盔。看到整頁的簡報上秀出來的Logo，幾乎就是這幾年我所碰到也實際接過的所有廠商了，所以這一步算是有滿足動機，只要有時間就可以開始研究這個解決方案的實用性是否真如台上的講者所說的如此美好。
+終於這一天來到了，因為某個案子需要支援Focus，開始要整合HTC wave sdk，不過因為專案整個資料量有60G左右，又包含許多分支和系統，也不可能直接從空專案開始，所以每一布都需要採用穩紮穩打的方式進行，避免改掉某個地方造成其他地方癱瘓的事情發生。但是即使是這樣，過程中Wave SDK還是讓我驚呆了，踩了幾個坑到今天才順利爬出來
+開始整合 之前同事已經將此專案先升級到2017的版本，於是直接採用這個branch開始製作。
+首先將Wave SDK內建的prefab拉進場景，再加入所需要的Define到 Player Settings 中，開啟 XR Settings的 Virtual Reality Supported，Virtual Reality SDKs也調整到 Mock HMD - Vive 這個選項後，這時候就迫不及待將專案執行一下，瞬間迎來了Unity死亡粉紅聖光
+It&amp;rsquo;s holy shit ！！
+因為看到這個畫面，可能的原因是某些plugin互相衝突，但是這些plugin都是Wave SDK宣稱有支援的硬體，因此對Focus SDK小組宣稱的整合開始覺得懷疑，有一種不祥的感覺。
+後來發現在Editor測試的時候，先把VR mode關掉就不會當掉了，確保在PC上測試的時候是安全的，build到實機上再把VR mode打開，這樣是比較可以接受的方案，因為這個奇怪的問題要找到可能曠日廢時，先把其他問題解決，最後再來解這個問題。
+自作聰明 整合如火如荼在進行中，直到遇到一個奇怪的問題，讓我整個丈二金剛摸不著頭腦。事情是這樣的，一個場景在一開始的時候，某個按鈕Animation只是把物件放大而已，這在其他系統上都是正常的，但是WAVE SDK竟然連動畫系統都會失效，這是為什麼呢？正當苦惱之際，也到論壇上尋找是否有相關的issue，可惜這個問題就是無法找到真正的發生原因。直到某個script發生一個問題，那個程式片段是利用define避開執行的區段
+#if !WAVEVR_SINGLEPASS_ENABLED IVRManager.Instance.m_useResetPosition = true; #endif  照理說不會執行的區段卻執行了，顯然define失效了，檢查player settings才發現Wave SDK的define不見了，怎麼不見的呢？翻了整個SDK會發現這一段程式碼：
+ public const string WVRSPDEF = &amp;quot;WAVEVR_SINGLEPASS_ENABLED&amp;quot;; public static List&amp;lt;string&amp;gt; GetDefineSymbols(BuildTargetGroup group) { //https://github.com/UnityCommunity/UnityLibrary/blob/master/Assets/Scripts/Editor/AddDefineSymbols.cs var symbols = PlayerSettings.GetScriptingDefineSymbolsForGroup(group); return symbols.Split(&#39;;&#39;).ToList(); } public static void SetSinglePassDefine(BuildTargetGroup group, bool set, List&amp;lt;string&amp;gt; allDefines) { var hasDefine = allDefines.</description>
+    </item>
     
     <item>
       <title>How to build a AR app by Unity with Vuforia</title>

@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Chimera</copyright>
-    <lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chimerakang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unity</title>
+      <link>https://chimerakang.github.io/tags/unity/</link>
+      <pubDate>Mon, 19 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/unity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htc</title>
+      <link>https://chimerakang.github.io/tags/htc/</link>
+      <pubDate>Mon, 19 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/htc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wave sdk</title>
+      <link>https://chimerakang.github.io/tags/wave-sdk/</link>
+      <pubDate>Mon, 19 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/wave-sdk/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AR</title>
@@ -18,15 +45,6 @@
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/tags/ar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unity</title>
-      <link>https://chimerakang.github.io/tags/unity/</link>
-      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://chimerakang.github.io/tags/unity/</guid>
       <description></description>
     </item>
     
