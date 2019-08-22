@@ -2,7 +2,7 @@
 <html lang="zh-tw">
 <head>
   
-    <title>How to build a AR app by Unity with Vuforia :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語</title>
+    <title>How to build a AR app by Unity with Vuforia&lt;1&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -34,7 +34,7 @@ File -&amp;gt; Build Settings -&amp;gt; Player Settings&amp;hellip; -&amp;gt; In
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="How to build a AR app by Unity with Vuforia :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語" />
+<meta name="twitter:title" content="How to build a AR app by Unity with Vuforia&lt;1&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語" />
 <meta name="twitter:description" content="前言 目前在unity上面有兩間廠商支援AR，一是鼎鼎大名的Google大神，剛開始推廣AR Core這個自家服務，雖然沒有什麼大問題，不過在相容性上面有些問題，很多舊一點的手機不能正常執行。另外一間是在AR這個領域耕耘許久的Vuforia，目前最新的版本是(8.3.8)，由此可知這個套件已經經過市場的迭代更新，相容性的問題是比較理想的，終點是Unity已經內建支援，所以今天要選擇這個套件。
 什麼是AR，可以做什麼 另外很多人不了解AR是甚麼，如果跟大家說，寶可夢算是第一個成功的AR產品，這樣子就比較容易理解。AR的服務大致上是利用手機的攝影鏡頭，並結合相關的技術，將虛擬的物件顯示在攝影畫面中，將兩者做結合。
 目前大部分實現都是遊戲為主，不過AR也適合結合衛星導航，可以在投影在抬頭顯示器上面，清楚標示行進方向或者地標地址
@@ -49,7 +49,7 @@ File -&amp;gt; Build Settings -&amp;gt; Player Settings&amp;hellip; -&amp;gt; In
 
 <meta property="og:locale" content="zh-tw" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="How to build a AR app by Unity with Vuforia :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語">
+<meta property="og:title" content="How to build a AR app by Unity with Vuforia&lt;1&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語">
 <meta property="og:description" content="前言 目前在unity上面有兩間廠商支援AR，一是鼎鼎大名的Google大神，剛開始推廣AR Core這個自家服務，雖然沒有什麼大問題，不過在相容性上面有些問題，很多舊一點的手機不能正常執行。另外一間是在AR這個領域耕耘許久的Vuforia，目前最新的版本是(8.3.8)，由此可知這個套件已經經過市場的迭代更新，相容性的問題是比較理想的，終點是Unity已經內建支援，所以今天要選擇這個套件。
 什麼是AR，可以做什麼 另外很多人不了解AR是甚麼，如果跟大家說，寶可夢算是第一個成功的AR產品，這樣子就比較容易理解。AR的服務大致上是利用手機的攝影鏡頭，並結合相關的技術，將虛擬的物件顯示在攝影畫面中，將兩者做結合。
 目前大部分實現都是遊戲為主，不過AR也適合結合衛星導航，可以在投影在抬頭顯示器上面，清楚標示行進方向或者地標地址
@@ -58,7 +58,7 @@ File -&amp;gt; Build Settings -&amp;gt; Player Settings&amp;hellip; -&amp;gt; In
 File -&amp;gt; Build Settings -&amp;gt; Player Settings&amp;hellip; -&amp;gt; Inspector -&amp;gt; XR Settings -&amp;gt; Vuforia Augmented Reality 如果沒有的話，點開 XR Settings 的畫面應該會是這樣： 點擊藍色的字體就可以直接引導到下載連結，會根據Unity的版本直接下載Vuforia的套件。 安裝完之後，同時需要將Unity重啟，接著 Vuforia Augmented Reality 應該就可以啟動了。
 建立 Vuforia ID 接著我們需要建立Vuforia的開發帳號，現在連線Vuforia Developer Portal上註冊一個開發帳號 接著登入Vuforia 按下右上角的Get Development Key 接著新增一組Key，待會這個Key會出現在列表中 在列表中點擊名稱進入頁面即可看到一組序號，複製這組序號，待會貼到Unity Editor上面 回到Unity，打開Vuforia Configuration： 將剛剛的序號貼到 App Licence Key 中即可 建立 Vuforia image db 然後回到Vuforia的網頁，切換到 Target Manager 的頁面，新增一個database，這個檔案待會需要下載並安裝到unity當中 新增的Database會顯示在列表中，點擊進入頁面，此時點擊Add Target 此時選擇將一張照片上傳，並填入此照片的寬度和一個名稱，按下Add之後，稍等一下，Vuforia會將此圖片作一些處理，大約幾分鐘後顯示Complete，下載database檔案 記得要選擇Unity 然後就會將檔案下載並存成." />
 <meta property="og:url" content="https://chimerakang.github.io/posts/vuforia1/" />
-<meta property="og:site_name" content="How to build a AR app by Unity with Vuforia" />
+<meta property="og:site_name" content="How to build a AR app by Unity with Vuforia&lt;1&gt;" />
 <meta property="og:image" content="http://img.iseephoto.com//files/photos/2016/07/this-augmented-reality-coloring-book-is-sure-to-be-a-new-favorite.jpg">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
@@ -134,7 +134,7 @@ File -&amp;gt; Build Settings -&amp;gt; Player Settings&amp;hellip; -&amp;gt; In
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://chimerakang.github.io/posts/vuforia1/">How to build a AR app by Unity with Vuforia</a></h1>
+    <a href="https://chimerakang.github.io/posts/vuforia1/">How to build a AR app by Unity with Vuforia<1></a></h1>
   <div class="post-meta">
       
     <span class="post-date">

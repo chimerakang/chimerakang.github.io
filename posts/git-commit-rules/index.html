@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  
+    <title>How to write a git commit message&lt;翻譯&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="原文 翻譯開始： 簡介：為什麼好的 commit message 很重要 如果你曾經任意瀏覽過一些 git repository，你可能可以發現每個repository提交的commit messages或多或少是一團糟。例如，從我早期我貢獻在Spring上面的gems可以看出一些端倪(編按：Spring是Ruby on Rails的一個安裝工具，gem是指在rails上面開發出來的套件)
+$ git log --oneline -5 --author cbeams --before &amp;quot;Fri Mar 26 2009&amp;quot; e5f4b49 Re-adding ConfigurationPostProcessorTests after its brief removal in r814. @Ignore-ing the testCglibClassesAreLoadedJustInTimeForEnhancement() method as it turns out this was one of the culprits in the recent build breakage. The classloader hacking causes subtle downstream effects, breaking unrelated tests. The test method is still useful, but should only be run on a manual basis to ensure CGLIB is not prematurely classloaded, and should not be run as part of the automated build."/>
+<meta name="keywords" content="git, "/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://chimerakang.github.io/posts/git-commit-rules/" />
+
+
+<link rel="stylesheet" href="https://chimerakang.github.io/assets/style.css">
+
+  <link rel="stylesheet" href="https://chimerakang.github.io/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://chimerakang.github.io/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://chimerakang.github.io/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How to write a git commit message&lt;翻譯&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語" />
+<meta name="twitter:description" content="原文 翻譯開始： 簡介：為什麼好的 commit message 很重要 如果你曾經任意瀏覽過一些 git repository，你可能可以發現每個repository提交的commit messages或多或少是一團糟。例如，從我早期我貢獻在Spring上面的gems可以看出一些端倪(編按：Spring是Ruby on Rails的一個安裝工具，gem是指在rails上面開發出來的套件)
+$ git log --oneline -5 --author cbeams --before &amp;quot;Fri Mar 26 2009&amp;quot; e5f4b49 Re-adding ConfigurationPostProcessorTests after its brief removal in r814. @Ignore-ing the testCglibClassesAreLoadedJustInTimeForEnhancement() method as it turns out this was one of the culprits in the recent build breakage. The classloader hacking causes subtle downstream effects, breaking unrelated tests. The test method is still useful, but should only be run on a manual basis to ensure CGLIB is not prematurely classloaded, and should not be run as part of the automated build." />
+<meta name="twitter:site" content="https://chimerakang.github.io/" />
+<meta name="twitter:creator" content="Chris(翻譯：Chimera)" />
+<meta name="twitter:image" content="https://imgs.xkcd.com/comics/git_commit.png">
+
+
+<meta property="og:locale" content="zh-tw" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to write a git commit message&lt;翻譯&gt; :: 漫步在數位靈魂之中 — 對工程師的輕鬆小語">
+<meta property="og:description" content="原文 翻譯開始： 簡介：為什麼好的 commit message 很重要 如果你曾經任意瀏覽過一些 git repository，你可能可以發現每個repository提交的commit messages或多或少是一團糟。例如，從我早期我貢獻在Spring上面的gems可以看出一些端倪(編按：Spring是Ruby on Rails的一個安裝工具，gem是指在rails上面開發出來的套件)
+$ git log --oneline -5 --author cbeams --before &amp;quot;Fri Mar 26 2009&amp;quot; e5f4b49 Re-adding ConfigurationPostProcessorTests after its brief removal in r814. @Ignore-ing the testCglibClassesAreLoadedJustInTimeForEnhancement() method as it turns out this was one of the culprits in the recent build breakage. The classloader hacking causes subtle downstream effects, breaking unrelated tests. The test method is still useful, but should only be run on a manual basis to ensure CGLIB is not prematurely classloaded, and should not be run as part of the automated build." />
+<meta property="og:url" content="https://chimerakang.github.io/posts/git-commit-rules/" />
+<meta property="og:site_name" content="How to write a git commit message&lt;翻譯&gt;" />
+<meta property="og:image" content="https://imgs.xkcd.com/comics/git_commit.png">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-08-22 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    首頁
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/posts">貼文</a></li>
+        
+      
+        
+          <li><a href="/about/about">關於我</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/posts">貼文</a></li>
+      
+    
+      
+        <li><a href="/about/about">關於我</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://chimerakang.github.io/posts/git-commit-rules/">How to write a git commit message&lt;翻譯&gt;</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2019-08-22
+    </span>
+    
+    
+    <span class="post-author">::
+      Chris(翻譯：Chimera)
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://chimerakang.github.io/tags/git/">git</a>&nbsp;
+    
+    #<a href="https://chimerakang.github.io/tags/the-seven-rules/">the seven rules</a>&nbsp;
+    
+  </span>
+  
+
+  
+  <img src="https://imgs.xkcd.com/comics/git_commit.png" class="post-cover" />
+  
+
+  <div class="post-content">
+    
+
+<h1 id="原文-https-chris-beams-io-posts-git-commit"><a href="https://chris.beams.io/posts/git-commit/">原文</a></h1>
+
+<h1 id="翻譯開始">翻譯開始：</h1>
+
+<h1 id="簡介-為什麼好的-commit-message-很重要">簡介：為什麼好的 commit message 很重要</h1>
+
+<p>如果你曾經任意瀏覽過一些 git repository，你可能可以發現每個repository提交的commit messages或多或少是一團糟。例如，從我早期我貢獻在Spring上面的gems可以看出一些端倪(編按：Spring是Ruby on Rails的一個安裝工具，gem是指在rails上面開發出來的套件)</p>
+
+<pre><code>$ git log --oneline -5 --author cbeams --before &quot;Fri Mar 26 2009&quot;
+
+e5f4b49 Re-adding ConfigurationPostProcessorTests after its brief removal in r814. @Ignore-ing the testCglibClassesAreLoadedJustInTimeForEnhancement() method as it turns out this was one of the culprits in the recent build breakage. The classloader hacking causes subtle downstream effects, breaking unrelated tests. The test method is still useful, but should only be run on a manual basis to ensure CGLIB is not prematurely classloaded, and should not be run as part of the automated build.
+2db0f12 fixed two build-breaking issues: + reverted ClassMetadataReadingVisitor to revision 794 + eliminated ConfigurationPostProcessorTests until further investigation determines why it causes downstream tests to fail (such as the seemingly unrelated ClassPathXmlApplicationContextTests)
+147709f Tweaks to package-info.java files
+22b25e0 Consolidated Util and MutableAnnotationUtils classes into existing AsmUtils
+7f96f57 polishing
+</code></pre>
+
+<p>讓人驚訝的是，將其與另外一批更新的git commit作比較</p>
+
+<pre><code>$ git log --oneline -5 --author pwebb --before &quot;Sat Aug 30 2014&quot;
+
+5ba3db6 Fix failing CompositePropertySourceTests
+84564a0 Rework @PropertySource early parsing logic
+e142fd1 Add tests for ImportSelector meta-data
+887815f Update docbook dependency and generate epub
+ac8326d Polish mockito usage
+</code></pre>
+
+<p>哪一個比較清楚呢？</p>
+
+<p>前者的長度和形式各不相同; 後者簡潔而一致。
+前者是默認情況下發生的事情; 後者永遠不會偶然發生。</p>
+
+<p>雖然許多存儲庫的日誌看起來像前者，但也有例外。 Linux內核和Git本身就是很好的例子。 查看Spring Boot或Tim Pope管理的任何存儲庫。</p>
+
+<p>這些存儲庫的貢獻者知道精心設計的Git提交消息是向其他開發人員（實際上是他們未來的自我）傳達關於變更的上下文的最佳方式。 diff會告訴你改變了什麼，但只有提交消息可以正確告訴你原因。 Peter Hutterer很好地說明了這一點：</p>
+
+<pre><code>Re-establishing the context of a piece of code is wasteful. We can’t avoid it completely, 
+so our efforts should go to reducing it [as much] as possible. Commit messages can do 
+exactly that and as a result, a commit message shows whether a developer is a good collaborator.
+</code></pre>
+
+<p>如果你沒有充分考慮什麼是一個偉大的Git commit message，可能是你沒有花太多時間使用git repository和相關工具。這可能會導致惡性循環：因為提交歷史是非結構化和不一致的，所以不會花太多時間使用或處理它。而且由於它沒有得到使用或處理，它仍然是非結構化和不一致的。</p>
+
+<p>但是，一個受到良好照顧的日誌是一件美麗而有用的事情。 git blame，revert，rebase，log，shortlog和其他子命令變為現實。審查其他人的commit和 pull requests變得值得做，並且突然可以獨立完成。理解為什麼幾個月或幾年前發生的事情變得不僅可能而且有效。</p>
+
+<p>專案的長期成功取決於其可維護性，維護者幾乎沒有比項目日誌更強大的工具。值得花時間學習如何正確地照顧一個人。一開始可能很麻煩很快成為習慣，最終成為所有參與者的驕傲和生產力的源泉。</p>
+
+<p>在這篇文章中，我正在解決保持健康的提交歷史的最基本要素：如何編寫單獨的提交消息。還有其他一些重要的做法，比如 <em>commit squashing</em> ，我在這裡沒有提到。也許我會在隨後的帖子中這樣做。</p>
+
+<p>大多數編程語言都有關於什麼構成慣用風格的公認慣例，即命名，格式化等。當然，這些慣例有不同的變化，但是大多數開發人員都認為選擇一個並堅持使用它會比每個人做自己的事情時的混亂要好得多。</p>
+
+<p>團隊的提交日誌方法應該沒有什麼不同。為了創建有用的修訂歷史記錄，團隊應首先就提交消息約定達成一致，該約定至少定義了以下三個方面：</p>
+
+<p>Style：標記語法，包裝邊距，語法，大寫，標點符號。拼出這些東西，消除猜測，並儘可能簡單。最終的結果將是一個非常一致的日誌，這不僅是一種樂趣，而且實際上定期閱讀。</p>
+
+<p>Content：提交消息的主體（如果有）應包含哪些信息？它應該包含什麼？</p>
+
+<p>Metadata：如何引用tracking ID，pull request number 等？</p>
+
+<p>幸運的是，關於什麼是一個慣用的Git commit 訊息，有完善的慣例。 實際上，其中許多都是以某些Git命令的運行方式來假設的。 沒有什麼需要重新發明的。 只需遵循以下七條規則，您就可以像專業人士那樣投入工作。</p>
+
+<h1 id="撰寫出良好的-git-commit-message-的七個原則">撰寫出良好的 Git commit message 的七個原則</h1>
+
+<blockquote>
+<p>請記住：以前都說過這一切。</p>
+</blockquote>
+
+<ol>
+<li>使用空白行區分標題和訊息內容</li>
+<li>標題的長度限制在50個字</li>
+<li>標題開頭使用大寫</li>
+<li>標題的結尾不要加上句號</li>
+<li>標題使用祈求的語法</li>
+<li>訊息內容在72個字元內自行斷行</li>
+<li>在內文中解釋提交的程式碼做了什麼、為什麼要做和如何解決問題</li>
+</ol>
+
+<h4 id="例如">例如：</h4>
+
+<pre><code>Summarize changes in around 50 characters or less
+
+More detailed explanatory text, if necessary. Wrap it to about 72
+characters or so. In some contexts, the first line is treated as the
+subject of the commit and the rest of the text as the body. The
+blank line separating the summary from the body is critical (unless
+you omit the body entirely); various tools like `log`, `shortlog`
+and `rebase` can get confused if you run the two together.
+
+Explain the problem that this commit is solving. Focus on why you
+are making this change as opposed to how (the code explains that).
+Are there side effects or other unintuitive consequences of this
+change? Here's the place to explain them.
+
+Further paragraphs come after blank lines.
+
+ - Bullet points are okay, too
+
+ - Typically a hyphen or asterisk is used for the bullet, preceded
+   by a single space, with blank lines in between, but conventions
+   vary here
+
+If you use an issue tracker, put references to them at the bottom,
+like this:
+
+Resolves: #123
+See also: #456, #789
+</code></pre>
+
+<hr />
+
+<h1 id="1-使用空白行區分訊息標題和內文">1.使用空白行區分訊息標題和內文</h1>
+
+<p>看一下底下這個git commit message：</p>
+
+<blockquote>
+<p>雖然不是必需的，但最好使用一個簡短（小於50個字符）的行來概括更改，然後是空白行，然後是更詳盡的描述。 提交消息中第一個空白行的文本被視為提交標題，並且該標題在整個Git中使用。 例如，Git-format-patch（1）將提交轉換為電子郵件，它使用Subject行上的標題和正文中的其餘提交。</p>
+</blockquote>
+
+<p>首先，並非每次提交都需要標題和正文。 有時候單行是好的，特別是當變化如此簡單以至於不需要進一步的上下文時。 例如：</p>
+
+<pre><code>Fix typo in introduction to user guide
+</code></pre>
+
+<p>不多說;如果讀者想知道拼音錯誤是甚麼，她可以看改了那些，例如使用 <em>git show</em> , <em>git diff</em> 或者 <em>git log -p</em> 這幾個指令。</p>
+
+<p>如果你在命令列裡輸入了類似這樣的指令，很容易使用 <em>-m</em> 參數進行 <em>git commit</em> :</p>
+
+<pre><code>$ git commit -m&quot;Fix typo in introduction to user guide&quot;
+</code></pre>
+
+<p>但是，當提交的內容需要一些解釋和上下文時，您需要編寫一個正文。 例如：</p>
+
+<pre><code>Derezz the master control program
+
+MCP turned out to be evil and had become intent on world domination.
+This commit throws Tron's disc into MCP (causing its deresolution)
+and turns it back into a chess game.
+</code></pre>
+
+<p>在提交的訊息中使用 <em>-m</em> 參數並不容易。 你最好在正確的文本編輯器中編寫消息。 如果您還沒有在命令行中設置與 <em>Git</em> 一起使用的編輯器，請閱讀 <em>Pro Git</em> 的這一部分。</p>
+
+<p>在任何情況下，在瀏覽日誌時，主體與身體的分離都會得到回報。 這是完整的日誌條目：</p>
+
+<pre><code>$ git log
+commit 42e769bdf4894310333942ffc5a15151222a87be
+Author: Kevin Flynn &lt;kevin@flynnsarcade.com&gt;
+Date:   Fri Jan 01 00:00:00 1982 -0200
+
+ Derezz the master control program
+
+ MCP turned out to be evil and had become intent on world domination.
+ This commit throws Tron's disc into MCP (causing its deresolution)
+ and turns it back into a chess game.
+</code></pre>
+
+<p>輸入 <em>git log &ndash;oneline</em> 的時候，它只印標題：</p>
+
+<pre><code>$ git log --oneline
+42e769 Derezz the master control program
+</code></pre>
+
+<p>或者輸入 *git shortlog*，按用戶分類顯示簡潔的標題：</p>
+
+<pre><code>$ git shortlog
+Kevin Flynn (1):
+      Derezz the master control program
+
+Alan Bradley (1):
+      Introduce security program &quot;Tron&quot;
+
+Ed Dillinger (3):
+      Rename chess program to &quot;MCP&quot;
+      Modify chess program
+      Upgrade chess program
+
+Walter Gibbs (1):
+      Introduce protoype chess program
+</code></pre>
+
+<p>在 <em>Git</em> 中還有許多其他的上下文，標題和正文之間的區別在於 - 但如果沒有空白行，它們將無法正常工作。</p>
+
+<hr />
+
+<h1 id="2-標題的長度限制在50個字">2. 標題的長度限制在50個字</h1>
+
+<p>50個字元不是僵硬的限制，只是一個經驗法則。保持標題的長度確保它們是可讀的，並迫使作者考慮一下最簡潔的方式來解釋正在發生的事情。</p>
+
+<blockquote>
+<p>提示：如果您在總結過程中遇到困難，可能會立即進行太多更改。爭取 *atomic commits*（一個獨立的帖子的標題）。</p>
+</blockquote>
+
+<p>GitHub的UI完全了解這些約定。如果你超過了50個字元的限制，它會警告你：
+<img src="https://i.imgur.com/zyBU2l6.png" alt="github warning" /></p>
+
+<p>並使用省略符號(&hellip;)截斷超過72個字元的任何標題：
+<img src="https://i.imgur.com/27n9O8y.png" alt="more than 72" /></p>
+
+<p>所以盡力鎖定在50個字元，同時考慮72個字元的限制</p>
+
+<hr />
+
+<h1 id="3-標題開頭使用大寫">3. 標題開頭使用大寫</h1>
+
+<p>這聽起來很簡單。 用大寫字母開始所有標題。
+例如以下面的方式：</p>
+
+<ul>
+<li>Accelerate to 88 miles per hour</li>
+</ul>
+
+<p>取代以下：</p>
+
+<ul>
+<li><p>accelerate to 88 miles per hour</p>
+
+<hr />
+
+<h1 id="4-標題的結尾不要加上句號">4. 標題的結尾不要加上句號</h1></li>
+</ul>
+
+<p>標題中不需要尾隨標點符號。 此外，當你試圖將它們保持在50個或更少時，空間是寶貴的。
+例如以下面的方式：</p>
+
+<ul>
+<li>Open the pod bay doors</li>
+</ul>
+
+<p>取代以下：</p>
+
+<ul>
+<li>Open the pod bay doors.</li>
+</ul>
+
+<hr />
+
+<h1 id="5-標題使用祈使式語法">5. 標題使用祈使式語法</h1>
+
+<p>祈使式語法只是“口頭或書寫，就好像發出命令或指示”。 幾個例子：</p>
+
+<ul>
+<li>Clean your room</li>
+<li>Close the door</li>
+<li>Take out the trash</li>
+</ul>
+
+<p>你現在正在閱讀的七條規則中的每一條都寫在祈使句中（“內文超過72個字元會自動斷行”等）。</p>
+
+<p>祈使句聽起來有點粗魯; 這就是為什麼我們不經常使用它。 但它非常適合 <em>Git</em> 提交標題訊息。這樣做的一個原因是 <em>Git</em> 本身代表你創建提交時使用命令。</p>
+
+<p>例如，使用 <em>git merge</em> 時預設的訊息：</p>
+
+<pre><code>Merge branch 'myfeature'
+</code></pre>
+
+<p>當使用 <em>git revert</em> 時：</p>
+
+<pre><code>Revert &quot;Add the thing with the stuff&quot;
+
+This reverts commit cc87791524aedd593cff5a74532befe7ab69ce9d.
+</code></pre>
+
+<p>或者在 <em>GitHub</em> 上單擊“合併”按鈕時：</p>
+
+<pre><code>Merge pull request #123 from someuser/somebranch
+</code></pre>
+
+<p>因此，當您在祈使句中編寫提交消息時，您將遵循 <em>Git</em> 自己的內建的規定。</p>
+
+<p>例如：</p>
+
+<ul>
+<li>Refactor subsystem X for readability</li>
+<li>Update getting started documentation</li>
+<li>Remove deprecated methods</li>
+<li>Release version 1.0.0</li>
+</ul>
+
+<p>一開始寫這種方式可能有點尷尬。我們更習慣於陳述語句，完全就是事實的陳述。這就是為什麼提交訊息最終會讀起來如下：</p>
+
+<ul>
+<li>Fixed bug with Y</li>
+<li>Changing behavior of X</li>
+</ul>
+
+<p>而且有時候提交訊息必須寫成對其內容的描述：</p>
+
+<ul>
+<li>More fixes for broken stuff</li>
+<li>Sweet new API methods</li>
+</ul>
+
+<p>為了消除任何混淆，這是一個簡單的規則，每次都是對的。</p>
+
+<p>適合的 <em>Git</em> 提交標題格式應該能夠呈現以下的句子：</p>
+
+<ul>
+<li>If applied, this commit will your subject line here</li>
+</ul>
+
+<p>例如：</p>
+
+<ul>
+<li>If applied, this commit will refactor subsystem X for readability</li>
+<li>If applied, this commit will update getting started documentation</li>
+<li>If applied, this commit will remove deprecated methods</li>
+<li>If applied, this commit will release version 1.0.0</li>
+<li>If applied, this commit will merge pull request #123 from user/branch</li>
+</ul>
+
+<p>請注意這不適用於其他非祈使句形式：</p>
+
+<ul>
+<li>If applied, this commit will fixed bug with Y</li>
+<li>If applied, this commit will changing behavior of X</li>
+<li>If applied, this commit will more fixes for broken stuff</li>
+<li>If applied, this commit will sweet new API methods</li>
+</ul>
+
+<blockquote>
+<p>請記住：只在標題中使用祈使句很重要。你在寫內文中可以放鬆這個限制。</p>
+
+<hr />
+
+<h1 id="6-訊息內容在72個字元內自行斷行">6. 訊息內容在72個字元內自行斷行</h1>
+</blockquote>
+
+<p><em>Git</em> 不會自動斷行。當您編寫提交訊息的內文時，您必須考慮其右邊距，並手動換行。</p>
+
+<p>建議以72個字元執行此操作，以便 <em>Git</em> 有足夠的空間來縮進文本，同時仍然保持整體不超過80個字元。</p>
+
+<p>一個好的文字編輯器可以幫上忙。例如，在編寫 <em>Git commit</em> 時，可以很容易地配置 <em>Vim</em> 將文本自動換行設定為72個字元。然而，傳統上， <em>IDE</em> 在為提交訊息中的文本換行提供智能支持方面一直很糟糕（儘管在最近的版本中， <em>IntelliJ IDEA</em> 終於在這方面做得更好。</p>
+
+<hr />
+
+<h1 id="7-在內文中解釋提交的程式碼做了什麼-為什麼要做和如何解決問題">7. 在內文中解釋提交的程式碼做了什麼、為什麼要做和如何解決問題</h1>
+
+<p>來自 <em>Bitcoin Core</em> 的這個提交是一個很好的例子，解釋了變化的原因和原因：</p>
+
+<pre><code>commit eb0b56b19017ab5c16c745e6da39c53126924ed6
+Author: Pieter Wuille &lt;pieter.wuille@gmail.com&gt;
+Date:   Fri Aug 1 22:57:55 2014 +0200
+
+   Simplify serialize.h's exception handling
+
+   Remove the 'state' and 'exceptmask' from serialize.h's stream
+   implementations, as well as related methods.
+
+   As exceptmask always included 'failbit', and setstate was always
+   called with bits = failbit, all it did was immediately raise an
+   exception. Get rid of those variables, and replace the setstate
+   with direct exception throwing (which also removes some dead
+   code).
+
+   As a result, good() is never reached after a failure (there are
+   only 2 calls, one of which is in tests), and can just be replaced
+   by !eof().
+
+   fail(), clear(n) and exceptions() are just never called. Delete
+   them.
+</code></pre>
+
+<p>看看完整的差異，只要想一下花時間在這里和現在提供這種背景，作者節省了同事和未來提交者的時間。 如果他沒有，它可能會永遠的被遺棄。</p>
+
+<p>在大多數情況下，您可以省略有關如何進行更改的詳細信息。 在這方面，代碼通常是不言自明的（如果代碼太複雜，需要在散文中解釋，那就是源代碼註釋的用途）。 只需要專注於明確你首先做出改變的原因 - 改變之前的事情（以及錯誤），他們現在的工作方式，以及為什麼你決定以你的方式解決問題。</p>
+
+<p>未來的維護者，謝謝你可能是你自己！</p>
+
+<h2 id="tips">Tips</h2>
+
+<h3 id="學會使用命令列-同時保留-ide">學會使用命令列，同時保留 <em>IDE</em></h3>
+
+<p>由於存在與Git子命令一樣多的原因，因此採用命令行是明智的。 Git非常強大; IDE也是，但每個都以不同的方式。我每天都使用IDE（IntelliJ IDEA）並廣泛使用其他（Eclipse），但我從未見過Git的IDE集成，它可以開始匹配命令行的易用性和功能（一旦你知道它）。</p>
+
+<p>某些與Git相關的IDE函數非常有用，比如在刪除文件時調用git rm，以及在重命名文件時使用git執行正確的操作。一切都崩潰的地方是你開始嘗試通過IDE提交，合併，變基或進行複雜的歷史分析。</p>
+
+<p>當談到使用Git的全部功能時，它一直是命令行。</p>
+
+<p>請記住，無論您使用的是Bash還是Zsh還是Powershell，都有一些製表符完成腳本，可以記住子命令和開關。</p>
+
+<h3 id="閱讀pro-git">閱讀Pro Git</h3>
+
+<p><em>Pro Git</em> 書籍可網路上免費獲取，而且非常棒。好好利用！</p>
+
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">讀其他的貼文</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      
+      <span class="button next">
+        <a href="https://chimerakang.github.io/posts/wave_daily1/">
+          <span class="button__text">HTC Wave SDK Development Daily &lt;1&gt;</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '515eabfe64312203975e',
+    clientSecret: 'e8ef1a742293c585df02a9d5acf77d115d36d7cb',
+    repo: 'chimerakang.github.io',
+    owner: 'chimerakang',
+    admin: ['chimerakang'],
+    id: location.pathname, 
+    distractionFreeMode: false 
+  });
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+      return;
+    }
+    gitalk.render('gitalk-container');
+  })();
+</script>
+
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Chimera</div>
+    
+  </div>
+</footer>
+
+<script src="https://chimerakang.github.io/assets/main.js"></script>
+<script src="https://chimerakang.github.io/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

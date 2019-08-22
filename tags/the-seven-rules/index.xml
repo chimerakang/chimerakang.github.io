@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>the seven rules on 漫步在數位靈魂之中</title>
+    <link>https://chimerakang.github.io/tags/the-seven-rules/</link>
+    <description>Recent content in the seven rules on 漫步在數位靈魂之中</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Chimera</copyright>
+    <lastBuildDate>Thu, 22 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chimerakang.github.io/tags/the-seven-rules/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to write a git commit message&lt;翻譯&gt;</title>
+      <link>https://chimerakang.github.io/posts/git-commit-rules/</link>
+      <pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/posts/git-commit-rules/</guid>
+      <description>原文 翻譯開始： 簡介：為什麼好的 commit message 很重要 如果你曾經任意瀏覽過一些 git repository，你可能可以發現每個repository提交的commit messages或多或少是一團糟。例如，從我早期我貢獻在Spring上面的gems可以看出一些端倪(編按：Spring是Ruby on Rails的一個安裝工具，gem是指在rails上面開發出來的套件)
+$ git log --oneline -5 --author cbeams --before &amp;quot;Fri Mar 26 2009&amp;quot; e5f4b49 Re-adding ConfigurationPostProcessorTests after its brief removal in r814. @Ignore-ing the testCglibClassesAreLoadedJustInTimeForEnhancement() method as it turns out this was one of the culprits in the recent build breakage. The classloader hacking causes subtle downstream effects, breaking unrelated tests. The test method is still useful, but should only be run on a manual basis to ensure CGLIB is not prematurely classloaded, and should not be run as part of the automated build.</description>
+    </item>
+    
+  </channel>
+</rss>

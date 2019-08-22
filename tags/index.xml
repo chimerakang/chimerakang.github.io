@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Chimera</copyright>
-    <lastBuildDate>Mon, 19 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chimerakang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>https://chimerakang.github.io/tags/git/</link>
+      <pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>the seven rules</title>
+      <link>https://chimerakang.github.io/tags/the-seven-rules/</link>
+      <pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/tags/the-seven-rules/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Unity</title>
