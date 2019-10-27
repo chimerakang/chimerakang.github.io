@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Chimera</copyright>
-    <lastBuildDate>Thu, 24 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chimerakang.github.io/tags/unity3d/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>如何使用Spring Joint2d，實作角色控制系統&lt;1&gt;</title>
       <link>https://chimerakang.github.io/posts/springjoint1/</link>
-      <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chimerakang.github.io/posts/springjoint1/</guid>
       <description>前言 最近研究很多套Unity的2D系統，骨架系統最近官方強力補強的一個區塊，加上之前很多第三方套件，呈現出百花爭鳴的現象，網路上很多人介紹2D animation或者anima 2D都相當的詳細，不過有個有趣的系統叫做Spring Joint 2D，中文翻作彈力關節或者彈簧關節介紹的人不多，或許是用的人比較少，也可能是其他特別的原因才會如此。我大概摸了一兩天，已經能夠大致上玩出一些有趣的東西來，難度也不算太難，需要調整的參數也不多，如果能夠理解整個系統，舉凡人物角色動作，場景的機關動作都可以透過這個系統製作出來。
