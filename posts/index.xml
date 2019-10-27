@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Chimera</copyright>
-    <lastBuildDate>Thu, 22 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chimerakang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何使用Spring Joint2d，實作角色控制系統&lt;1&gt;</title>
+      <link>https://chimerakang.github.io/posts/springjoint1/</link>
+      <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chimerakang.github.io/posts/springjoint1/</guid>
+      <description>前言 最近研究很多套Unity的2D系統，骨架系統最近官方強力補強的一個區塊，加上之前很多第三方套件，呈現出百花爭鳴的現象，網路上很多人介紹2D animation或者anima 2D都相當的詳細，不過有個有趣的系統叫做Spring Joint 2D，中文翻作彈力關節或者彈簧關節介紹的人不多，或許是用的人比較少，也可能是其他特別的原因才會如此。我大概摸了一兩天，已經能夠大致上玩出一些有趣的東西來，難度也不算太難，需要調整的參數也不多，如果能夠理解整個系統，舉凡人物角色動作，場景的機關動作都可以透過這個系統製作出來。
+開始研究吧！
+相關環境 首先在Asset Store下載這個套件：Flat Platformer Template
+https://assetstore.unity.com/packages/2d/environments/flat-platformer-template-108101
+相關物理學 Unity內建支援基礎的物理計算，包含重力、摩擦力、碰撞處理，所有gameobject只要加上rigidbody component，只要設定好質量(mass)，執行後就會自然的往下掉，當然這是指數值大於零情況，如果設定成負數，自然就會慢慢飄上去，零的話就可以滯空囉。加上collider component之後，設定好collider box之後，物體就會變成所謂的剛體，但是我認為固體這個名稱會比較直覺，比較符合自然界的認知。至於摩擦力的呈現，在Unity裡面將這個特性放在物體表面的材質上，只要將新增成物理材質即可，有兩種物理數值可以設定(摩擦力Friction、彈性Bounciness)，詳細介紹我另外寫一篇介紹文(可以先參考外國人寫的介紹文：https://medium.com/sun-dog-studios/rapid-unity-tutorials-1-physics-materials-68758351fd8a)
+什麼是彈力關節 如下圖，六角物體以一個spring joint 2d和上方的正方形物體連結，調整得好就可以呈現出彈簧的感覺 製作人物 首先到asset store載入上面提到的套件，開啟demo scene，接著我們先把Knight刪掉，我們要重新製作一個角色
+先製作身體部分： 新增 2D Sprite Object -&amp;gt; 然後將 Characters_1 加入到 Sprite參數中，add Rigidbody2D和BoxCollider 2D這兩個component，同時填入Mass數值，下方有個 Constraints Freeze Rotation Z請務必打勾，因為我們要確保只會針對ＸY軸做碰撞計算
+再來加入斗篷和武器： 為騎士裝上彈簧腳 在身體下方新增一個game object，取名LFoot，加上RigidBody2D 和 SpringJoint2D，給定Sprite圖形，新增一個Physics Material2D取名foot(Friction:1, Bounciness:0)，將此材質指定到RigidBody2D下的Material，這樣子才能在接觸地面的時候產生摩擦力。
+物理材質的數值設定 新增SpringJoint2D，注意一下要連結到身體的RigidBody，這樣子兩者才能連結在一起。接下來取消Auto Configure Connect這個選項，調整Connected Anchor，將這個點設定到跟身體的底部，Distance不需設定太大，否則很可能身體和腳會分家，最後阻尼(Damping Ratio)要注意，這是0-1的設定，數值越小越軟，就是越容易跳動的意思，反之就是越硬，把這個想成是避震器，可以自行調整。Frequency是指震動的強度，值越大震動就越強。然後把整個gameobject複製一份，改名成RFoot，這樣子就有兩條腿了。 最後結果 人物控制 接下來我們開始讓人物可以動起來，當移動的時候，希望讓雙腿能夠像風火輪一樣的動起來，然後帶動身體移動，我們用以下的程式碼來驅動如彈簧般的雙腿，讓他們不斷地旋轉
+ //Take into account all of the above for foot placement (relative to the body) Vector2 anchor = Quaternion.</description>
+    </item>
     
     <item>
       <title>How to write a git commit message&lt;翻譯&gt;</title>
